@@ -1,5 +1,4 @@
 import sys
-sys.path.append("/att/nobackup/sahmad3/PROJECTS/SUSMAP/hydroDL")
 from hydroDL import master, utils
 from hydroDL.data import dbCsv
 import hydroDL.data as hd
