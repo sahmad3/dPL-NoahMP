@@ -105,7 +105,7 @@ ub = np.array([dict_ubConst[k] for k in varConst_Noah] + [10, 10])    ##last two
 lb = np.array([dict_lbConst[k] for k in varConst_Noah] + [-10, -10])
  
 
-# ===== static attributes =====
+# ===== static attributes for gap-filling SMAP=====
 varRaw = [
     'WISE_SILT', 'WISE_SAND', 'WISE_CLAY', 'WISE_TAWC', 'WISE_BULK', 'lis_LAI_inst',
     'flag_SMAP_roughness', 'flag_SMAP_waterbody', 'flag_SMAP_albedo', 'lis_Landcover_inst', 'flag_SMAP_staWater',
@@ -116,10 +116,6 @@ varRaw = [
 ## read database
 forcing = df.getDataTs(varForcing_Noah, doNorm=True, rmNan=True)
 parameters = df.getDataConst(varConst_Noah, doNorm=True, rmNan=True)  
-print('parameters',parameters, parameters.min(),parameters.max())
-parameters_nonnorm = df.getDataConst(varConst_Noah, doNorm=False, rmNan=True)
-print('parameters_nonnorm',parameters_nonnorm, parameters_nonnorm.min(),parameters_nonnorm.max())
-
 rawData = df.getDataConst(varRaw, doNorm=True, rmNan=True)
 target = df.getDataTs([targetVar[0]], doNorm=True, rmNan=False)
 target_GF = df.getDataTs([targetVar[0]], doNorm=True, rmNan=False)
